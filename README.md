@@ -35,41 +35,69 @@ This robot was designed as a dual-layer autonomous and manual coin retrieval sys
   <em>Figure 2: Block diagram of the software components of the robot.</em>
 </p>
 
-### 🛜 1.3 Remote Hardware Overview
+### 🕹️ 1.3 Remote Controller Overview
 
-The wireless remote controller was built around a **PIC32 microcontroller** with the following components:
+Built around a **PIC32MX130F064B**, this handheld device provides real-time robot control and feedback:
 
-- **PS2 Joystick Module** – Captures X/Y directional input for manual robot movement.
-- **JDY-40 Bluetooth Module** – Facilitates UART-based wireless communication to the robot.
-- **LCD Display (16x2)** – Shows live coin count and connection status.
-- **4 Push Buttons** – Customizable inputs for mode switching and manual servo control.
-- **3.3V Regulator + Discrete Power Circuitry** – Supplies clean voltage for logic and peripherals.
-
-This modular and hand-held system was designed to mimic a basic gaming controller while displaying relevant feedback to the user.
+- **PS2 Controller Input** — Reads analog stick and button data for control.
+- **16x2 LCD Display** — Shows coin count and metal detection strength.
+- **Speaker Output** — Beeps in proportion to metal signal strength.
+- **JDY-40 Bluetooth** — Sends command packets to the robot, requests telemetry.
 
 ---
 
-### 💡 1.4 Remote Software Overview
+## 📟 2. Communication Protocol
 
-The remote firmware was written in C for the PIC32 architecture and includes:
+| Symbol | Meaning                       | Notes                                 |
+|--------|-------------------------------|---------------------------------------|
+| `!`    | Start of command              | Followed by 6-character PS2 data      |
+| `@`    | Data request from remote     | Robot replies with signal + coin data |
 
-- **PS2 Joystick Input Parser** – Reads analog joystick values and translates them into movement commands.
-- **UART Packet Protocol** – Encodes commands (movement, servo control) into structured packets and transmits them over JDY-40 Bluetooth.
-- **LCD Update Handler** – Dynamically refreshes coin count and robot status (autonomous/manual, ready/error).
-- **Debounced Button Input** – Ensures reliable mode switching without false triggering.
-- **Mode Selector Logic** – Allows user to toggle between autonomous and manual robot modes.
+Command format: `[b1][b2][RX][RY][LX][LY]`, where:
+- `b1`, `b2` = button codes (e.g. `X`, `O`, `L`, `R`)
+- Joysticks encoded as `'1'`–`'9'` based on analog position
 
-The remote and robot communicate at 9600 baud and maintain a lightweight command-response structure for real-time responsiveness.
+Robot responds with: `xxxxxcc` → `xxxxx` = signal strength, `cc` = coin count
 
-The embedded firmware and remote control software were designed to work in tandem:
+---
 
-- **Robot (STM32)**:
-  - Finite State Machine (FSM) for autonomous control
-  - PWM-based drive system and servo control
-  - ADC-based metal detection
-  - UART-based communication with remote
+## 🔧 3. Features & Capabilities
 
-- **Remote (PIC32)**:
-  - PS2 joystick input interpretation
-  - LCD coin tracking feedback
-  - UART command transmission via JDY-40
+### ✅ Core Features
+- Dual mode operation: **manual** (PS2 joystick) and **autonomous** (FSM-driven)
+- Metal detection using Colpitts oscillator + ADC logic
+- Perimeter detection using wire-induced signal pickup
+- Wireless serial communication over JDY-40 Bluetooth
+- Coin pickup with servo arm and electromagnet
+
+### 💎 Bonus Features
+- PS2-based input for intuitive controls
+- LCD live telemetry (coin count, signal strength)
+- Speaker feedback that increases beeping with signal
+- Pause/resume support in autonomous mode
+- 90° precision turns (L3/R3)
+- Inch forward/backward (R1/R2)
+- Semi-automated pickup (L2)
+
+---
+
+## 🧪 4. Testing & Calibration
+
+- Oscilloscope tuning of Colpitts oscillator
+- ADC voltage thresholds for metal/perimeter
+- Timer calibration for 90° turns and servo PWM
+- Field testing with real Canadian coins
+- Range and interference tests for JDY-40 modules
+
+---
+
+## 📷 5. Media & Demonstrations
+
+_TBD: Insert links to demo videos, images of robot collecting coins, scope traces for oscillator, etc._
+
+---
+## 🧑‍💻 6. Authors
+- Group A13, ELEC291 UBC 2025
+- Special thanks to Dr. Jesus Calvino-Fraga for project framework
+
+---
