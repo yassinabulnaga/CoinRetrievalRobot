@@ -107,35 +107,10 @@ Two oscilloscope snapshots were taken to verify the oscillator’s output wavefo
 The graph below shows analog readings from two perimeter sensor coils, captured via the STM32’s ADC. A voltage spike is clearly observed when the robot nears the perimeter wire.
 
 <p align="center">
-  <img src="link" width="600"/>
+  <img src="https://github.com/user-attachments/assets/475e8e40-0011-497c-be48-128a9db58001" width="600"/>
   <br>
   <em>Figure 3: ADC readings from perimeter sensors – note the increase in signal strength above threshold (~2.4V).</em>
 </p>
-
----
-
-### ⏱️ Motor Timing – 90° Turn Calibration
-
-Precise motor control timing was determined experimentally. Approximately 600 ms of differential wheel drive achieves a 90° spin-in-place rotation.
-
-<p align="center">
-  <img src="link" width="600"/>
-  <br>
-  <em>Figure 4: Snapshot of calibrated motor pulse timing for 90° turn.</em>
-</p>
-
----
-
-### 🧲 Coin Pickup Field Test
-
-During lab testing, the robot successfully detected and retrieved various Canadian coins using the servo-mounted electromagnet.
-
-<p align="center">
-  <img src="link" width="600"/>
-  <br>
-  <em>Figure 5: Field test showing robot collecting and depositing a Toonie.</em>
-</p>
-
 ---
 
 ### 📶 JDY-40 UART Communication Test
@@ -157,6 +132,24 @@ Video demonstration video to be added soon.
 ## 🧑‍💻 6. Authors
 - Group A13, ELEC291 UBC 2025
 - Special thanks to Dr. Jesus Calvino-Fraga for project framework
+
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Team Member</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Yassin Abulnaga</td></tr>
+    <tr><td>Faris Alshouani</td></tr>
+    <tr><td>Ali Danesh</td></tr>
+    <tr><td>Ronald Feng</td></tr>
+    <tr><td>Drédyn Fontana</td></tr>
+    <tr><td>Nick Unruh</td></tr>
+  </tbody>
+</table>
 
 ---
 ## 📄 License
