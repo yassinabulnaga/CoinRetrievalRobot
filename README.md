@@ -111,6 +111,8 @@ The graph below shows analog readings from two perimeter sensor coils, captured 
   <br>
   <em>Figure 3: ADC readings from perimeter sensors – note the increase in signal strength above threshold (~2.4V).</em>
 </p>
+
+
 ---
 
 ### 📶 JDY-40 UART Communication Test
