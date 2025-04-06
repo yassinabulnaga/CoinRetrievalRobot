@@ -1,4 +1,4 @@
-# 🤖 Coin Retrieval Robot
+#  Coin Retrieval Robot
 
 A second-year mechatronics project at UBC for the course **ELEC291**, involving the design and construction of a robot capable of retrieving metallic coins in both autonomous and manual modes using a PS2-controlled wireless interface.
 
@@ -8,9 +8,9 @@ A second-year mechatronics project at UBC for the course **ELEC291**, involving 
 
 ---
 
-## 🧠 1. System Overview
+##  1. System Overview
 
-### 🔩 1.1 Hardware System Overview
+###  1.1 Hardware System Overview
 
 This robot was designed as a dual-layer autonomous and manual coin retrieval system. Key subsystems include:
 
@@ -35,7 +35,7 @@ This robot was designed as a dual-layer autonomous and manual coin retrieval sys
   <em>Figure 2: Block diagram of the software components of the robot.</em>
 </p>
 
-### 🕹️ 1.3 Remote Controller Overview
+###  1.3 Remote Controller Overview
 
 Built around a **PIC32MX130F064B**, this handheld device provides real-time robot control and feedback:
 
@@ -46,7 +46,7 @@ Built around a **PIC32MX130F064B**, this handheld device provides real-time robo
 
 ---
 
-## 📟 2. Communication Protocol
+##  2. Communication Protocol
 
 | Symbol | Meaning                       | Notes                                 |
 |--------|-------------------------------|---------------------------------------|
@@ -61,16 +61,16 @@ Robot responds with: `xxxxxcc` → `xxxxx` = signal strength, `cc` = coin count
 
 ---
 
-## 🔧 3. Features & Capabilities
+##  3. Features & Capabilities
 
-### ✅ Core Features
+###  Core Features
 - Dual mode operation: **manual** (PS2 joystick) and **autonomous** (FSM-driven)
 - Metal detection using Colpitts oscillator + ADC logic
 - Perimeter detection using wire-induced signal pickup
 - Wireless serial communication over JDY-40 Bluetooth
 - Coin pickup with servo arm and electromagnet
 
-### 💎 Bonus Features
+###  Bonus Features
 - PS2-based input for intuitive controls
 - LCD live telemetry (coin count, signal strength)
 - Speaker feedback that increases beeping with signal
@@ -81,9 +81,9 @@ Robot responds with: `xxxxxcc` → `xxxxx` = signal strength, `cc` = coin count
 
 ---
 
-## 🧪 4. Testing & Calibration
+##  4. Testing & Calibration
 
-### 📡 Oscilloscope Tuning – Colpitts Oscillator (Metal Detection)
+###  Oscilloscope Tuning – Colpitts Oscillator (Metal Detection)
 
 Two oscilloscope snapshots were taken to verify the oscillator’s output waveform and assess how the signal changes in the presence of nearby metal.
 
@@ -102,7 +102,7 @@ Two oscilloscope snapshots were taken to verify the oscillator’s output wavefo
 
 ---
 
-### 📊 ADC Voltage Threshold Calibration – Perimeter Detection
+###  ADC Voltage Threshold Calibration – Perimeter Detection
 
 The graph below shows analog readings from two perimeter sensor coils, captured via the STM32’s ADC. A voltage spike is clearly observed when the robot nears the perimeter wire.
 
@@ -115,7 +115,7 @@ The graph below shows analog readings from two perimeter sensor coils, captured 
 
 ---
 
-### 📶 JDY-40 UART Communication Test
+###  JDY-40 UART Communication Test
 
 Serial logs and debug outputs were used to confirm successful bidirectional data exchange between remote and robot via JDY-40 modules.
 
@@ -126,12 +126,12 @@ Serial logs and debug outputs were used to confirm successful bidirectional data
 </p>
 
 
-## 📷 5. Media & Demonstrations
+##  5. Media & Demonstrations
 
 Video demonstration video to be added soon.
 
 ---
-## 🧑‍💻 6. Authors
+##  6. Authors
 - Group A13, ELEC291 UBC 2025
 - Special thanks to Dr. Jesus Calvino-Fraga for project framework
 
