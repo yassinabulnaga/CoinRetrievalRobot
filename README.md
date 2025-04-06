@@ -83,17 +83,75 @@ Robot responds with: `xxxxxcc` → `xxxxx` = signal strength, `cc` = coin count
 
 ## 🧪 4. Testing & Calibration
 
-- Oscilloscope tuning of Colpitts oscillator
-- ADC voltage thresholds for metal/perimeter
-- Timer calibration for 90° turns and servo PWM
-- Field testing with real Canadian coins
-- Range and interference tests for JDY-40 modules
+### 📡 Oscilloscope Tuning – Colpitts Oscillator (Metal Detection)
+
+Two oscilloscope snapshots were taken to verify the oscillator’s output waveform and assess how the signal changes in the presence of nearby metal.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d24e52ae-01d5-483a-9630-1540a24fbfc6" width="600"/>
+  <br>
+  <em>Figure 1: Colpitts oscillator signal without coin nearby – long pulse width observed.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ca66b617-6422-4d3e-9a66-91e76bb94fe8" width="600"/>
+  <br>
+  <em>Figure 2: Colpitts oscillator with coin present – narrower pulse due to frequency shift.</em>
+</p>
+
 
 ---
 
+### 📊 ADC Voltage Threshold Calibration – Perimeter Detection
+
+The graph below shows analog readings from two perimeter sensor coils, captured via the STM32’s ADC. A voltage spike is clearly observed when the robot nears the perimeter wire.
+
+<p align="center">
+  <img src="link" width="600"/>
+  <br>
+  <em>Figure 3: ADC readings from perimeter sensors – note the increase in signal strength above threshold (~2.4V).</em>
+</p>
+
+---
+
+### ⏱️ Motor Timing – 90° Turn Calibration
+
+Precise motor control timing was determined experimentally. Approximately 600 ms of differential wheel drive achieves a 90° spin-in-place rotation.
+
+<p align="center">
+  <img src="link" width="600"/>
+  <br>
+  <em>Figure 4: Snapshot of calibrated motor pulse timing for 90° turn.</em>
+</p>
+
+---
+
+### 🧲 Coin Pickup Field Test
+
+During lab testing, the robot successfully detected and retrieved various Canadian coins using the servo-mounted electromagnet.
+
+<p align="center">
+  <img src="link" width="600"/>
+  <br>
+  <em>Figure 5: Field test showing robot collecting and depositing a Toonie.</em>
+</p>
+
+---
+
+### 📶 JDY-40 UART Communication Test
+
+Serial logs and debug outputs were used to confirm successful bidirectional data exchange between remote and robot via JDY-40 modules.
+
+<p align="center">
+  <img src="link" width="600"/>
+  <br>
+  <em>Figure 6: Serial terminal showing remote command and robot response at 9600 baud.</em>
+</p>
+
+
 ## 📷 5. Media & Demonstrations
 
-_TBD: Insert links to demo videos, images of robot collecting coins, scope traces for oscillator, etc._
+Video demonstration video to be added soon.
 
 ---
 ## 🧑‍💻 6. Authors
@@ -101,3 +159,5 @@ _TBD: Insert links to demo videos, images of robot collecting coins, scope trace
 - Special thanks to Dr. Jesus Calvino-Fraga for project framework
 
 ---
+## 📄 License
+Copyright © 2025. All rights reserved. Do not reproduce without permission.
