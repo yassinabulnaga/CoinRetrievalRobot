@@ -1,6 +1,6 @@
 #  Coin Retrieval Robot
 
-A second-year mechatronics project at UBC for the course **ELEC291**, involving the design and construction of a robot capable of retrieving metallic coins in both autonomous and manual modes using a PS2-controlled wireless interface.
+A second-year mechatronics project at UBC for the course **ELEC291**, involving the design and construction of a robot capable of retrieving metallic coins in both autonomous and manual modes using a PS2-controlled wireless interface. For more details, see PDFs -> Project 2 Report
 
 <p align="center">
   <img width="700" alt="Robot Front View" src="https://github.com/user-attachments/assets/c7d87b71-8aaa-4f1e-9d11-5c24962ff966" />
