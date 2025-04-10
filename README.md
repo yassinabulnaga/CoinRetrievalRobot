@@ -128,8 +128,7 @@ Serial logs and debug outputs were used to confirm successful bidirectional data
 
 ##  5. Media & Demonstrations
 
-Video demonstration video to be added soon.
-
+https://www.youtube.com/watch?v=KWwsTouMKVg
 ---
 ##  6. Authors
 - Group A13, ELEC291 UBC 2025
